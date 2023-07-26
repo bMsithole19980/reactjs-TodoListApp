@@ -1,74 +1,44 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Registration(props){
-    const [name , setName]=useState('');
-    const [surname , setSurname]=useState('');
-    const [password , setPassword]=useState('');
-    const [confPass , setConfPassword]=useState('');
     const [username , setUsername]=useState('');
+    const [password , setPassword]=useState('');
+    const [showPassword, setShowPassword]= useState(false);
+    const navigate =useNavigate();
 
-    const handleSubmit=(event)=>{
-        event.preventDefault();
-
-    }
-    const add=(event)=>{
-        event.preventDefault();
-        props.add(name,surname,password,confPass,username);
-        console.log(add);
+    const handlePassword=()=>{
+        setShowPassword(!showPassword);
 
     }
+    const handleLogin=()=>{
+        alert('successfully logged in');
+        navigate('/home')
 
-    
+    }
 
     return(
 
-       
-        <div className="row">
-        <div className="offsett-1g-3 col-1g-6">
+        <div className="login-container">
+        <div className="form-group">
 
-           <form className="FRM" onSubmit={handleSubmit} style={{ backgroundColor: "aqua" }}>
-                <h1>SignUp</h1>
-                <div className="form-outline mb-4 text:right">
-                    <label className="form-label" style={{ textAlign: "left" }} >Name</label><br></br>
-                    <input id="form2Example1" value={name} type="name" onChange={(event)=>setName(event.target.value)}    placeholder="Enter First Name" className="form-control" />
-
-                </div>
-
-
-                <div className="form-outline mb-4">
-                    <label className="form-label" htmlFor="form2Example1">surname</label><br></br>
-                    <input id="form2Example1" type="text" value={surname} onChange={(event)=>setSurname(event.target.value)}   placeholder="Enter Last name" className="form-control" />
-                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                </div>
-                <div className="form-outline mb-4">
-                    <label className="form-label" htmlFor="form2Example1">Password</label><br></br>
-                    <input id="form2Example1" type="text"  value={password} onChange={(event)=>setPassword(event.target.value)} placeholder="Enter password" className="form-control" />
-                    <span toggle="#password-field" className="fa fa-fw fa-eye field-icon toggle-password"></span>
-                </div>
-                <div className="form-outline mb-4">
-                    <label className="form-label" htmlFor="form2Example1">Confirm password</label><br></br>
-                    <input id="form2Example1" type="text" value={confPass} onChange={(event)=>setConfPassword(event.target.value)}  placeholder="retype the password" className="form-control" />
-                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                </div>
-                <div className="form-outline mb-4 text:right">
-                    <label className="form-label" style={{ textAlign: "left" }} >Username</label><br></br>
-                    <input id="form2Example1" value={username} type="username" onChange={(event)=>setUsername(event.target.value)}   placeholder="Enter email address" className="form-control" />
-
-                </div>
-                
-
-                <button to={'/Registration'} onClick={add}  type="button" className="btn btn-sucess">SignUp</button>
-
-
-                <div className="text-center">
-                    <p>Already registered <Link to={'/'} className="btn btn-success"> Login</Link></p>
-
-
-                </div>
-            </form>
+           <div className="form-container"  style={{ backgroundColor: "transparent" }}>
+              <h1>Sign Up Page</h1>
+              <input type="txt" onChange={(event)=>setUsername(event.target.value)} placeholder="Enter username or email"></input>
+              <div className="password-container">
+                <input type={password ? 'text' : password} onChange={(event)=>setPassword(event.target.value)} placeholder="Enter password"></input>
+                <span className="passwordHide" onClick={handlePassword}>
+                    {showPassword ? <i className=" fas fa-eye-slash" style={{color:"black"}}></i>:<i className="fas fa-eye"></i>}
+                </span>
+               
+              </div>
+              <button onClick={handleLogin}>Login</button>
+              <h3>Already have an account : <Link to='/' style={{color:"blue" ,textDecoration:"none"}}>Sign Up</Link></h3>
+            </div>
         </div>
     </div>
+        
     )
 }
 export default Registration;

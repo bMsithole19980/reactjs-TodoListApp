@@ -4,14 +4,24 @@
   background-size: cover;
   background-repeat: no-repeat;
  
- 
-  
+}
+.header{
+  display: flex;
+  box-shadow:  0 2px 4px rgba(0 , 0,0,0.1);
+  background-color: lightslategray;
+  justify-content: center;
+  padding: 5px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
 }
 *{
   margin: 0;
   padding: 0;
 }
+.TodoForm{
 
+}
 
 .App-logo {
   height: 40vmin;
@@ -36,7 +46,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  
 }
 
 @keyframes App-logo-spin {
@@ -150,6 +160,171 @@ body{
   border-radius: 14px;
 
 }
+.form-group{
+ 
+  padding: 30px;
+  color: black;
+  border-radius: 5px;
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: white;
+  
+}
+.password-container{
+  position: relative;
 
+}
+.passwordHide{
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.form-group input{
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 300px;
+  height: 30px;
+  max-width: 400px;
+  border-radius: 5px;
+  margin-top: 10%;
+}
+.form-group button{
+  background-color: black;
+  color:white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border: blue;
+  margin-top: 10px;
+}
+.form-group h3{
+  color: black;
+  margin-bottom: 20px;
+  margin-left: -10%;
+  margin-top: 10%;
 
+}
+.form-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.todo-group{
+  padding: 30px;
+  color: black;
+  border-radius: 5px;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 20px;
+}
+.todo-group h1{
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.input{
+  margin-top: 5px;
+  margin-left: -15%;
+}
+.input input{
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 250px;
+  height: 30px;
+  max-width: 400px;
+  border-radius: 5px;
+  margin-top: 10%;
+}
+.input button{
+  background-color: rgb(46, 175, 227);
+  color:white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border: rgb(103, 103, 238);
+  margin-top: 10px;
+  margin-left: 5px;
+  width: 20%;
+}
+.input select{
+  margin-left: 25px;
+  border-radius: px;
+  color: white;
+  height: 30px;
+  background-color: black;
+}
+.added-task{
+  background-color: #282c34;
+  color: white;
+  margin-left: 45px;
+  width: 97.5%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
+}
+.task-item{
+  display: flex;
+  
+  
+}
+.added-task h2{
+  text-align: left;
+  margin-left: 4%;
+  margin-bottom: 10px;
+ flex: 1;
+}
+.added-task svg{
+  color: green;
+  width: 0px;
+  margin-left: 140px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+
+}
+.update{
+  color: green;
+  left: 50px;
+  cursor: pointer;
+}
+.priority-circle{
+  
+  margin-right: 10px;
+  width: 10px;
+  height: 10px;
+}
+.priority-low{
+  background-color: green;
+  
+}
+.priority-medium{
+  background-color: yellow;
+
+}
+.priority-high{
+  background-color: red;
+}
+.task-info{
+  display: flex;
+}
+.task-info span{
+  width: 5px;
+  height: 5px;
+  margin-left: 40%;
+}
